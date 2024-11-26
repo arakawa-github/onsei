@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech</title>
+</head>
+<body>
+    <h2>Text-to-Speech Demo</h2>
+    <textarea id="textInput" rows="4" cols="50" placeholder="Enter text to read aloud"></textarea>
+    <br>
+    <button onclick="speakText()">Read Aloud</button>
+
+    <script>
+        function speakText() {
+            const text = document.getElementById('textInput').value;
+            const utterance = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
